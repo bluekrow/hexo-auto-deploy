@@ -1,6 +1,10 @@
 #!/bin/sh -l
 
-echo $1
+OWNER_NAME=$1
+OWNER_EMAIL=$2
+
+echo "Owner name: $OWNER_NAME"
+echo "Owner email: $OWNER_EMAIL"
 #echo "AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
 #echo "REPO_OWNER_AND_NAME: ${{ github.REPOSITORY }}"
 #echo "REPO_URL: ${{ github.EVENT.REPOSITORY.CLONE_URL }}"

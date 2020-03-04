@@ -12,4 +12,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ github.EVENT.REPOSITORY.OWNER.NAME }}
+    - ${{ github.EVENT.REPOSITORY.OWNER.EMAIL }}
     - ${{ inputs.message }}
