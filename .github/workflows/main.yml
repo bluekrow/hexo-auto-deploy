@@ -9,7 +9,9 @@ jobs:
 
     steps:
     - name: Set start timer
-      run: echo ::set-env name=START_TIME::$(date)
+      run: |
+        echo ::set-env name=START_TIME::$(date)
+        echo ::set-env name=START_SECONDS::$(date +%s)
 
     - name: Self checkout 
       uses: actions/checkout@v2
@@ -25,5 +27,7 @@ jobs:
 
     - name: Timings
       run: |
-        echo "Start time: $START_TIME"
-        echo "End time:   $(date)"
+        echo "Start time:    $START_TIME"
+        echo "End time:      $(date)"
+        echo "Start seconds: $START_SECONDS"
+        echo "End seconds:   $(date +%s)"       
