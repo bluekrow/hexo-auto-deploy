@@ -1,13 +1,10 @@
 name: 'Test Action'
 description: 'Action for testing'
-env:
-  OWNER_NAME: ${{ github.EVENT.REPOSITORY.OWNER.NAME }}
-  OWNER_EMAIL: ${{ github.EVENT.REPOSITORY.OWNER.EMAIL }}
 inputs:
   message:
     description: 'Message from container'
     required: true
-    default: "I'm alive"
+    default: ${{ github.EVENT.REPOSITORY.OWNER.NAME }}
 outputs:
   time:
     description: 'The time we greeted you'
