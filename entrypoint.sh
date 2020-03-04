@@ -1,3 +1,5 @@
+#!/bin/sh -l
+
 echo "AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
 echo "REPO_OWNER_AND_NAME: ${{ github.REPOSITORY }}"
 echo "REPO_URL: ${{ github.EVENT.REPOSITORY.CLONE_URL }}"
