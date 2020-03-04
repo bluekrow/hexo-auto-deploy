@@ -26,4 +26,4 @@ jobs:
     - name: Timings
       run: |
         echo "Start time: $START_TIME"
-        echo "End date: ${date}"
+        echo "End time:   $(date)"
