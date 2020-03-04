@@ -4,7 +4,7 @@ inputs:
   message:
     description: 'Message from container'
     required: true
-    default: 'I'm alive'
+    default: "I'm alive"
 outputs:
   time: # id of output
     description: 'The time we greeted you'
