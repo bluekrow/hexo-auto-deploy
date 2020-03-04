@@ -24,10 +24,3 @@ jobs:
 
     - name: Set output 
       run: echo "The time was ${{ steps.test.outputs.time }}"
-
-    - name: Timings
-      run: |
-        echo "Start time:    $START_TIME"
-        echo "End time:      $(date)"
-        echo "Start seconds: $START_SECONDS"
-        echo "End seconds:   $(date +%s)"       

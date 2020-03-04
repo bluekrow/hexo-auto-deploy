@@ -1,3 +1,3 @@
 FROM alpine:3.11
-ENTRYPOINT [ "echo" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
 CMD [ "Hello World" ]
