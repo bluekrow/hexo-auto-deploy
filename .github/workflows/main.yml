@@ -1,0 +1,19 @@
+name: Action Test
+
+on: [push]
+
+jobs:
+  action_test:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Self checkout 
+      uses: actions/checkout@v2
+    - name: Use the action in root
+      uses: ./
+      id: test
+      with:
+        message: 'Welcome Message'
+    - name: Set output 
+      run: echo "The time was ${{ steps.test.outputs.time }}"
