@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+echo "Environment var: $1"
 echo "Owner name: $OWNER_NAME"
 echo "Owner email: $OWNER_EMAIL"
 #echo "AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
