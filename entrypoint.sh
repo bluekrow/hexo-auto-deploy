@@ -1,8 +1,5 @@
 #!/bin/sh -l
 
-OWNER_NAME=$1
-OWNER_EMAIL=$2
-
 echo "Owner name: $OWNER_NAME"
 echo "Owner email: $OWNER_EMAIL"
 #echo "AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
