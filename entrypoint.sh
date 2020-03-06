@@ -3,7 +3,7 @@
 echo "ENVIRONMENT VARIABLES"
 echo "Token:$INPUT_TOKEN"
 echo "RepoQualifiedName: $INPUT_REPO_QUALIFIED_NAME"
-echo "RepoUrl: $INPUT_URL"
+echo "RepoUrl: $INPUT_REPO_URL"
 echo "OwnerName: $INPUT_OWNER_NAME"
 echo "OwnerEMail: $INPUT_OWNER_EMAIL"
 echo "CommitMessage: $INPUT_COMMIT_MESSAGE"
