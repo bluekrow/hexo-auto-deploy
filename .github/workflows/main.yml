@@ -8,17 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Dump GitHub Context  
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
 
-    - name: Dump Job Context
-      env:
-        JOB_CONTEXT: ${{ toJson(job) }}
-      run: echo "$JOB_CONTEXT"
-
-    - name: Self checkout 
+    - name: Self checkout
       uses: actions/checkout@v2
 
     - name: Use the action in root
@@ -26,6 +17,3 @@ jobs:
       id: test
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Set output 
-      run: echo "The time was ${{ steps.test.outputs.time }}"

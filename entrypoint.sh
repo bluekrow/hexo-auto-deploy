@@ -9,7 +9,7 @@ echo "CommitMessage: $INPUT_COMMIT_MESSAGE"
 echo "DeployBranch: $INPUT_DEPLOY_BRANCH"
 echo "DeployDir: $INPUT_DEPLOY_DIR"
 echo "SourceDir: $INPUT_SOURCE_DIR"
-
+echo ""
 echo "CALCULATED VARIABLES"
 REPO_URL=https://github.com/${INPUT_OWNER_NAME}/${INPUT_REPO_NAME}.git
 echo "RepoUrl: $REPO_URL"
@@ -17,6 +17,11 @@ REPO_URL_AUTH=https://${INPUT_OWNER_NAME}:${INPUT_TOKEN}@github.com/${INPUT_OWNE
 echo "RepoUrlAuth: $REPO_URL_AUTH"
 DEPLOY_BRANCH_EXISTS=$(git ls-remote --heads ${REPO_URL} ${INPUT_DEPLOY_BRANCH} | wc -l)
 echo "DeployUrlExists: $DEPLOY_BRANCH_EXISTS"
-
+echo ""
+echo "CHECK INSTALLED SOFTWARE VERSIONS"
+echo "git Version"
 git --version
+echo "node Version"
+node --version
+echo "npm Version"
 npm -version
