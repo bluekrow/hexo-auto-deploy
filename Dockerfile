@@ -6,4 +6,6 @@ RUN apk --update add git npm && \
     rm -rf /var/lib/apt/lists/* && \
     rm /var/cache/apk/*
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]
