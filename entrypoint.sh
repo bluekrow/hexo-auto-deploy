@@ -10,3 +10,5 @@ echo "CommitMessage: $INPUT_COMMIT_MESSAGE"
 echo "DeployBranch: $INPUT_DEPLOY_BRANCH"
 echo "DeployDir: $INPUT_DEPLOY_DIR"
 echo "SourceDir: $INPUT_SOURCE_DIR"
+pwd
+ls
