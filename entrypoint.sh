@@ -57,6 +57,7 @@ else
 fi
 git config user.email ${INPUT_OWNER_EMAIL}
 git config user.name ${INPUT_OWNER_NAME}
+cd ..
 echo ""
 
 echo "COPY STATIC CONTENT TO DESTINATION BRANCH"
@@ -64,7 +65,7 @@ cp -a ${INPUT_SOURCE_DIR}/. ${INPUT_DEPLOY_DIR}/
 echo ""
 
 echo "PUSH CHANGES TO DESTINATION BRANCH"
-cd ../${INPUT_DEPLOY_DIR}
+cd ${INPUT_DEPLOY_DIR}
 git add .
 git commit -m "${INPUT_COMMIT_MESSAGE}"
 if [ "$DEPLOY_BRANCH_EXISTS" == 1 ]; then
