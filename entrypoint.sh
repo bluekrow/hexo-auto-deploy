@@ -32,3 +32,8 @@ echo ""
 echo "INSTALL HEXO AND DEPENDENCIES"
 npm install
 npm install -g hexo-cli
+echo ""
+
+echo "LIST CURRENT FILES"
+pwd
+ls -lha
