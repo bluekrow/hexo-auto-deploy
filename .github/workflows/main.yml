@@ -8,10 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set start timer
-      run: |
-        echo ::set-env name=START_TIME::$(date)
-        echo ::set-env name=START_SECONDS::$(date +%s)
+    - name: Dump GitHub Context  
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
+
+      - name: Dump Job Context
+      env:
+        JOB_CONTEXT: ${{ toJson(job) }}
+      run: echo "$JOB_CONTEXT"
 
     - name: Self checkout 
       uses: actions/checkout@v2
