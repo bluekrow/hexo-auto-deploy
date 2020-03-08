@@ -20,6 +20,11 @@ DEPLOY_BRANCH_EXISTS=$(git ls-remote --heads ${REPO_URL} ${INPUT_DEPLOY_BRANCH} 
 echo "DeployUrlExists: $DEPLOY_BRANCH_EXISTS"
 echo ""
 
+echo "INSTALL HEXO AND DEPENDENCIES"
+npm install
+npm install -g hexo-cli
+echo ""
+
 echo "CHECK INSTALLED SOFTWARE VERSIONS"
 echo "git Version"
 git --version
@@ -27,11 +32,8 @@ echo "node Version"
 node --version
 echo "npm Version"
 npm -version
-echo ""
-
-echo "INSTALL HEXO AND DEPENDENCIES"
-npm install
-npm install -g hexo-cli
+echo "hexo Version"
+hexo -version
 echo ""
 
 echo "GENERATE STATIC FILES"
