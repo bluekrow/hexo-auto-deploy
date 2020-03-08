@@ -34,6 +34,42 @@ npm install
 npm install -g hexo-cli
 echo ""
 
-echo "LIST CURRENT FILES"
-pwd
-ls -lha
+echo "GENERATE STATIC FILES"
+hexo clean
+hexo generate
+echo ""
+
+echo "CONFIGURE DESTINATION BRANCH"
+if [ "$DEPLOY_BRANCH_EXISTS" == 1 ]; then
+    echo "Clone existent $INPUT_DEPLOY_BRANCH branch"
+    git clone --single-branch --branch ${INPUT_DEPLOY_BRANCH} ${REPO_URL} ${INPUT_DEPLOY_DIR}
+    cd ${INPUT_DEPLOY_DIR}
+    git remote set-url origin ${REPO_URL_AUTH}
+else
+    echo "Initialize and push to a new $INPUT_DEPLOY_BRANCH branch"
+    mkdir ${INPUT_DEPLOY_DIR}
+    cd ${INPUT_DEPLOY_DIR}
+    git init
+    git remote add origin ${REPO_URL_AUTH}
+    git checkout -b ${INPUT_DEPLOY_BRANCH}
+fi
+git config user.email ${INPUT_OWNER_EMAIL}
+git config user.name ${INPUT_OWNER_NAME}
+echo ""
+
+echo "COPY STATIC CONTENT TO DESTINATION BRANCH"
+rsync -r ${INPUT_SOURCE_DIR}/ ${INPUT_DEPLOY_DIR}
+echo ""
+
+echo "PUSH CHANGES TO DESTINATION BRANCH"
+cd ../${INPUT_DEPLOY_DIR}
+git add .
+git commit -m "${INPUT_COMMIT_MESSAGE}"
+if [ "$DEPLOY_BRANCH_EXISTS" == 1 ]; then
+  git push
+else
+  git push -u origin ${INPUT_DEPLOY_BRANCH}
+fi
+echo "" 
+
+echo "DEPLOY FINALIZED"
