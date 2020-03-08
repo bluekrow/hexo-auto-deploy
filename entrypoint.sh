@@ -18,5 +18,5 @@ echo "RepoUrlAuth: $REPO_URL_AUTH"
 DEPLOY_BRANCH_EXISTS=$(git ls-remote --heads ${REPO_URL} ${INPUT_DEPLOY_BRANCH} | wc -l)
 echo "DeployUrlExists: $DEPLOY_BRANCH_EXISTS"
 
-git -v
-npm -v
+git --version
+npm -version
