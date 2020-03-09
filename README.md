@@ -2,7 +2,8 @@
 
 Auto deploy generated static files using Hexo CLI
 
-## Docker Container
-- Alpine v3.11
-- Git
-- Node
+## Docker Container included software
+- Alpine v3.11 base image
+- Git - latest
+- Node - latest
+- hexo-cli and dependant node packages - latest
