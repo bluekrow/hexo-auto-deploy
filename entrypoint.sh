@@ -1,4 +1,4 @@
-#!/bin/sh -l
+#!/bin/sh -le
 
 echo "ENVIRONMENT VARIABLES"
 echo "Token:$INPUT_TOKEN"
@@ -20,9 +20,12 @@ DEPLOY_BRANCH_EXISTS=$(git ls-remote --heads ${REPO_URL} ${INPUT_DEPLOY_BRANCH} 
 echo "DeployUrlExists: $DEPLOY_BRANCH_EXISTS"
 echo ""
 
-./01.setup.sh
-./02.generate.sh
-./03.configure.local.sh
-./04.deploy.sh
+pwd
+ls -lha
+
+./scripts/01.setup.sh
+./scripts/02.generate.sh
+./scripts/03.configure.local.sh
+./scripts/04.deploy.sh
 
 echo "DEPLOY FINALIZED"
