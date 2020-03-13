@@ -23,9 +23,9 @@ echo ""
 pwd
 ls -lha
 
-./scripts/01.setup.sh
-./scripts/02.generate.sh
-./scripts/03.configure.local.sh
-./scripts/04.deploy.sh
+sh /scripts/01.setup.sh
+sh /scripts/02.generate.sh
+sh /scripts/03.configure.local.sh
+sh /scripts/04.deploy.sh
 
 echo "DEPLOY FINALIZED"
