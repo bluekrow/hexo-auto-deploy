@@ -9,7 +9,7 @@ branding:
   color: 'blue'
 inputs:
   token:
-    description: 'Github secret token that grants access to the destination repository. If the detination repository is the same local repositroy, the token can be obtained using ${{ secrets.GITHUB_TOKEN }}'
+    description: 'Github secret token that grants access to the destination repository. If the detination repository is the same local repositroy, the token can be obtained using \$\{\{ secrets.GITHUB_TOKEN \}\}'
     required: true
   repo_name:
     description: 'Destination repository name. If not specified the default value is the local repository name'
