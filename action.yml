@@ -1,7 +1,8 @@
 name: 'Hexo Auto Deploy'
 author: 'BlueKrow'
 description: 'Auto deploy of hexo-generated static files using Hexo CLI.
-              The action uses parameters to specify the deploy destination respository information.branding:'
+              The action uses parameters to specify the deploy destination respository information.'
+branding:
   icon: 'feather'  
   color: 'blue'
 inputs:
